@@ -29,10 +29,10 @@ export const VideoSlideshow: React.FC = () => {
   };
 
   const videoFeeds = [
-    "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1558981285-6f0c94958bb6?q=80&w=400&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1558980331-0672ff794669?q=80&w=400&auto=format&fit=crop"
+    "/images/bike-1.jpg",
+    "/images/bike-2.jpg",
+    "/images/bike-3.jpg",
+    "/images/bike-4.jpg"
   ];
 
   const FeedColumn = ({ opacity = "1", speed = "40s" }: { opacity?: string, speed?: string }) => (

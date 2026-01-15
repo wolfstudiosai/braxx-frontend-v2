@@ -43,9 +43,9 @@ export const Footer: React.FC<FooterProps> = ({ setView }) => {
     <footer className="relative h-[85vh] min-h-[700px] overflow-hidden text-white">
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1558981285-6f0c94958bb6?q=80&w=2400&auto=format&fit=crop')` }}
+        style={{ backgroundImage: `url('/images/footer.jpeg')` }}
       >
-        <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-transparent"></div>
       </div>
 
       <div className="relative z-10 h-full flex flex-col px-12 lg:px-24 py-16">
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ setView }) => {
               placeholder="OPERATIVE EMAIL"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-white/5 backdrop-blur-xl border-b-2 border-white/20 py-5 px-4 text-white text-sm font-black tracking-widest focus:outline-none focus:border-[#e2ff4a] transition-all placeholder:text-white/20"
+              className="w-full bg-white/15 backdrop-blur-xl border-b-2 border-white/20 py-5 px-4 text-white text-sm font-black tracking-widest focus:outline-none focus:border-[#e2ff4a] transition-all placeholder:text-white/20"
             />
             <button
               disabled={isPending}

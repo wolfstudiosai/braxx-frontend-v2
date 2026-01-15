@@ -2,6 +2,7 @@ import React from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { Marquee } from './Marquee';
 import { Product } from '@/types';
+import Link from 'next/link';
 
 export const ProductRow = ({ products }: { products: Product[] }) => {
   const allProducts =
@@ -19,7 +20,8 @@ export const ProductRow = ({ products }: { products: Product[] }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {allProducts.map((product, index) => (
-          <div
+          <Link
+            href={`/products/${product.productId}?variantName=${product.name.replace(" ", "-")}`}
             key={product.id}
             className={`group cursor-pointer py-12 flex flex-col min-h-[500px] transition-all duration-500 relative overflow-hidden bg-transparent
               ${index !== 3 ? 'lg:border-r' : ''} 
@@ -42,7 +44,7 @@ export const ProductRow = ({ products }: { products: Product[] }) => {
             <div className="mt-8 space-y-1 relative z-10 text-center">
               <h3 className="text-xl font-black italic tracking-tighter text-black uppercase">{`BRAXX ${product.title}: ${product.name.split(" ")[1].slice(0, 1)}`}</h3>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
