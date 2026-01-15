@@ -357,7 +357,7 @@ export function ProductPageClient({ product, initialVariantIndex }: ProductPageC
       </div>
 
       {/* SECTION 2: DETAILED SPECS MATRIX */}
-      <section className="bg-white py-32 px-8 lg:px-24 mb-10">
+      <section className="bg-white py-32 px-8 lg:px-24">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-12">
@@ -424,25 +424,25 @@ export function ProductPageClient({ product, initialVariantIndex }: ProductPageC
                 icon: <Cpu className="text-[#e2ff4a]" />,
                 title: "V-CORE CONTROLLER",
                 desc: "Proprietary vector-field processing for instant torque response and thermal efficiency.",
-                img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
+                img: "/images/bike-1.jpg"
               },
               {
                 icon: <Layers className="text-[#e2ff4a]" />,
                 title: "RIPSTOP CHASSIS",
                 desc: "T6 aerospace-grade aluminum alloy frame with reinforced stress points for high-impact landings.",
-                img: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800&auto=format&fit=crop"
+                img: "/images/bike-2.jpg"
               },
               {
                 icon: <Disc className="text-[#e2ff4a]" />,
                 title: "RECON BRAKING",
                 desc: "Oversized 240mm discs with sintered pads for zero-fade performance in extreme heat.",
-                img: "https://images.unsplash.com/photo-1485965120184-a220f721d03e?q=80&w=800&auto=format&fit=crop"
+                img: "/images/bike-3.jpg"
               },
               {
                 icon: <Wind className="text-[#e2ff4a]" />,
                 title: "SILENT DRIVE",
                 desc: "Acoustically tuned drive chain with self-lubricating tech to maintain operational stealth.",
-                img: "https://images.unsplash.com/photo-1558981285-6f0c94958bb6?q=80&w=800&auto=format&fit=crop"
+                img: "/images/bike-4.png"
               }
             ].map((tech, i) => (
               <div key={i} className="group relative bg-white/5 border border-white/10 rounded-[3rem] p-8 flex flex-col h-[450px] overflow-hidden transition-all hover:bg-white/10 hover:border-white/20">
