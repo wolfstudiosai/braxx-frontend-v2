@@ -393,7 +393,7 @@ export function ProductPageClient({ product, initialVariantIndex }: ProductPageC
 
             <div className="relative group">
               <div className="absolute -inset-4 bg-black rounded-[4rem] blur-2xl opacity-5 group-hover:opacity-10 transition-opacity"></div>
-              <div className="relative aspect-[4/5] bg-gray-50 rounded-[4rem] border border-black/5 overflow-hidden flex items-center justify-center p-12">
+              <div className="relative aspect-4/5 bg-gray-50 rounded-[4rem] border border-black/5 overflow-hidden flex items-center justify-center p-12">
                 <img
                   src={selectedVariant?.images?.[0] || "https://raw.githubusercontent.com/StackBlitz/stackblitz-images/main/braxx-supreme.png"}
                   alt="Top View"

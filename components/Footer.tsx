@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ setView }) => {
               placeholder="OPERATIVE EMAIL"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-white/15 backdrop-blur-xl border-b-2 border-white/20 py-5 px-4 text-white text-sm font-black tracking-widest focus:outline-none focus:border-[#e2ff4a] transition-all placeholder:text-white/20"
+              className="w-full bg-white/15 backdrop-blur-xl border-b-2 border-white/20 py-5 px-4 text-white text-sm tracking-widest focus:outline-none focus:border-[#e2ff4a] transition-all placeholder:text-white/20"
             />
             <button
               disabled={isPending}

@@ -6,7 +6,7 @@ import { ArrowRight, Clock } from 'lucide-react';
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen pt-32">
+    <div className="min-h-screen bg-[#d4d4d4] pt-32">
       <header className="px-8 lg:px-24 mb-16">
         <h1 className="text-7xl lg:text-[10rem] font-light italic tracking-tighter uppercase leading-none text-black whitespace-nowrap">
           LATEST NEWS
@@ -22,8 +22,12 @@ export default function BlogPage() {
 
       <section className="px-8 lg:px-24 mb-10">
         <div className="group relative w-full h-[60vh] rounded-[4rem] overflow-hidden shadow-2xl bg-black">
-          <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?q=80&w=2000&auto=format&fit=crop" alt="Featured Post" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          <img
+            src="/images/UNRIVALED-PERFORMANCE.jpg"
+            alt="Featured Post"
+            className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000"
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent"></div>
           <div className="absolute bottom-12 left-12 right-12 flex flex-col md:flex-row items-end justify-between gap-8">
             <div className="space-y-4 max-w-2xl text-white">
               <div className="flex items-center gap-4">
@@ -39,8 +43,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <BlogSection />
-      <div className="h-32"></div>
+      <BlogSection layout="scroll" />
     </div>
   );
 }
