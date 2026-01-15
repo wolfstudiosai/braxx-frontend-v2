@@ -1,0 +1,7 @@
+{
+  "name": "BRAXX | High Performance E-Moto",
+  "description": "A premium e-commerce experience for high-performance electric supermoto company based in Los Angeles, CA.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
