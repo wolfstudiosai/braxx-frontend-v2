@@ -135,12 +135,12 @@ export const Product360Viewer: React.FC<Product360ViewerProps> = ({ images, clas
       style={{ cursor: 'url("/icons/icons-360.png") 8 8, grab' }}
     >
       {/* Current visible image - show immediately */}
-      <div className="relative flex justify-center items-center overflow-hidden h-[65vh] sm:h-[90vh]">
+      <div className="relative flex justify-center items-center overflow-hidden h-full w-full">
         <img
           src={images[currentIndex]}
           alt={`Product view ${currentIndex + 1} of ${totalImages}`}
           draggable={false}
-          className="w-full h-[65vh] sm:h-[90vh] md:h-screen object-cover pointer-events-none"
+          className="w-full h-full object-contain pointer-events-none"
           style={{
             // transform: 'scale(1.25)',
             transformOrigin: 'center center',

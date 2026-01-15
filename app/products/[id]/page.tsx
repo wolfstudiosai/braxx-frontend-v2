@@ -1,5 +1,7 @@
-import { getProducts, getSingleProduct } from "@/lib/api";
-import { ProductVariant } from "@/types";
+import { getSingleProduct } from "@/lib/api";
+import { Product, ProductVariant } from "@/types";
+import { notFound } from "next/navigation";
+import { ProductPageClient } from "./ProductPageClient";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -9,15 +11,22 @@ interface Props {
 export default async function ProductPage({ params, searchParams }: Props) {
   const { id } = await params;
   const { variantName } = await searchParams;
-  const product = await getSingleProduct(id);
-  const products = await getProducts()
-  const variant = product?.variants.find((v: ProductVariant) => v.name === variantName?.replace("-", " "));
+  const product: Product = await getSingleProduct(id);
 
-  console.log(variant);
+  if (!product || !product.uuid) {
+    notFound();
+  }
+
+  // Find the variant index based on variantName query param
+  const decodedVariantName = variantName?.replace(/-/g, " ");
+  const selectedVariantIndex = product.variants.findIndex(
+    (v: ProductVariant) => v.name.toLowerCase() === decodedVariantName?.toLowerCase()
+  );
 
   return (
-    <main className="bg-black px-2 pb-10">
-
-    </main>
+    <ProductPageClient
+      product={product}
+      initialVariantIndex={selectedVariantIndex >= 0 ? selectedVariantIndex : 0}
+    />
   );
 }

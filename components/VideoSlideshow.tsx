@@ -32,7 +32,7 @@ export const VideoSlideshow: React.FC = () => {
     "/images/bike-1.jpg",
     "/images/bike-2.jpg",
     "/images/bike-3.jpg",
-    "/images/bike-4.jpg"
+    "/images/bike-4.png"
   ];
 
   const FeedColumn = ({ opacity = "1", speed = "40s" }: { opacity?: string, speed?: string }) => (
