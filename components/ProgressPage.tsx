@@ -121,7 +121,7 @@ export const ProgressPage = () => {
                   </div>
 
                   {/* Gradient Overlay for better text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-[1] opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-gradient-to-t from-black via-black/60 to-transparent z-1 opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
 
                   {/* Content */}
                   <div className="relative z-10 h-full flex flex-col justify-between">
@@ -151,7 +151,7 @@ export const ProgressPage = () => {
                             key={idx}
                             className="flex items-center gap-2 text-gray-200"
                           >
-                            <span className="size-1.5 rounded-full bg-white flex-shrink-0"></span>
+                            <span className="size-1.5 rounded-full bg-white shrink-0"></span>
                             <span className="text-sm font-medium">{feature}</span>
                           </div>
                         ))}
