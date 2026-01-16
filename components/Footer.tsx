@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { startTransition, useState, useTransition } from 'react';
+import React, { useState, useTransition } from 'react';
 import Link from 'next/link';
 import { Send, Twitter, Instagram, Facebook, Linkedin, Loader2 } from 'lucide-react';
 import { ViewState } from '../types';
