@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Send, MapPin, Phone, Mail } from 'lucide-react';
+import { Send, MapPin } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useForm } from 'react-hook-form';
 import { CreateContact } from '@/lib/api';
@@ -75,33 +75,33 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="bg-[#d4d4d4] min-h-screen flex flex-col lg:flex-row pt-20">
+    <div className="bg-[#d4d4d4] min-h-screen flex flex-col lg:flex-row pt-16 md:pt-20">
       {/* LEFT PANEL: STORE LOCATIONS MAP */}
-      <div className="w-full lg:w-1/2 h-[50vh] lg:h-auto min-h-[500px] relative overflow-hidden bg-black group flex flex-col">
+      <div className="w-full lg:w-1/2 h-[40vh] sm:h-[50vh] lg:h-auto lg:min-h-screen relative overflow-hidden bg-black group flex flex-col">
         {/* Store Location Cards */}
-        <div className="p-6 space-y-4 z-10 relative">
-          <div className="flex items-center gap-2 mb-4">
+        <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 z-10 relative">
+          <div className="flex items-center gap-2 mb-3 sm:mb-4">
             <div className="w-2 h-2 rounded-full bg-[#e2ff4a] animate-pulse"></div>
-            <span className="text-[10px] font-black text-white/60 uppercase tracking-widest">Authorized Dealers</span>
+            <span className="text-[9px] sm:text-[10px] font-black text-white/60 uppercase tracking-widest">Authorized Dealers</span>
           </div>
-          <div className="grid grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3">
             {STORE_LOCATIONS.map((store) => (
               <div
                 key={store.id}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-4 hover:bg-white/10 transition-all duration-300"
               >
                 <div className="flex items-start justify-between">
-                  <div className="space-y-2">
-                    <h3 className="text-sm font-black italic text-white tracking-tight uppercase">
+                  <div className="space-y-1 sm:space-y-2">
+                    <h3 className="text-xs sm:text-sm font-black italic text-white tracking-tight uppercase">
                       {store.name}
                     </h3>
                     <div className="space-y-0.5">
-                      <p className="text-[11px] font-bold text-white/60">{store.address}</p>
-                      <p className="text-[11px] font-bold text-white/60">{store.city}</p>
+                      <p className="text-[10px] sm:text-[11px] font-bold text-white/60">{store.address}</p>
+                      <p className="text-[10px] sm:text-[11px] font-bold text-white/60">{store.city}</p>
                     </div>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-[#e2ff4a]/20 border border-[#e2ff4a]/30 flex items-center justify-center">
-                    <MapPin size={14} className="text-[#e2ff4a]" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#e2ff4a]/20 border border-[#e2ff4a]/30 flex items-center justify-center shrink-0">
+                    <MapPin size={12} className="sm:w-[14px] sm:h-[14px] text-[#e2ff4a]" />
                   </div>
                 </div>
               </div>
@@ -110,37 +110,37 @@ export const ContactPage = () => {
         </div>
 
         {/* Map */}
-        <div className="flex-1 relative min-h-[300px]">
+        <div className="flex-1 relative min-h-[200px] sm:min-h-[300px]">
           <StoreMap locations={STORE_LOCATIONS} />
 
           {/* Map legend */}
-          <div className="absolute bottom-4 left-4 z-1000 bg-black/80 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-[#e2ff4a]"></div>
-            <span className="text-[9px] font-black text-white/60 uppercase tracking-widest">BRAXX Service Centers</span>
+          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-1000 bg-black/80 backdrop-blur-sm rounded-lg sm:rounded-xl px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-2">
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#e2ff4a]"></div>
+            <span className="text-[8px] sm:text-[9px] font-black text-white/60 uppercase tracking-widest">BRAXX Service Centers</span>
           </div>
         </div>
       </div>
 
       {/* RIGHT PANEL: TEXT INFO & CONTACT FORM */}
-      <div className="w-full lg:w-1/2 h-auto flex flex-col p-8 lg:p-24 justify-center bg-[#d4d4d4]">
-        <div className="max-w-xl mx-auto w-full space-y-16">
+      <div className="w-full lg:w-1/2 flex flex-col p-6 sm:p-8 lg:p-16 xl:p-24 justify-center bg-[#d4d4d4]">
+        <div className="max-w-xl mx-auto w-full space-y-8 sm:space-y-12 lg:space-y-16">
 
           {/* Header */}
-          <div className="space-y-6">
-            <span className="text-black/30 text-[10px] font-black uppercase tracking-[0.5em] block">Direct Communications</span>
-            <h1 className="text-6xl lg:text-[8rem] font-light italic tracking-tighter uppercase leading-none text-black whitespace-nowrap">
-              SECURE CHANNEL
+          <div className="space-y-4 sm:space-y-6">
+            <span className="text-black/30 text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em] sm:tracking-[0.5em] block">Direct Communications</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[8rem] font-light italic tracking-tighter uppercase leading-none text-black">
+              SECURE <br className="sm:hidden" />CHANNEL
             </h1>
-            <div className="pt-6">
-              <p className="text-lg font-bold text-black/60 max-w-sm leading-snug">
+            <div className="pt-4 sm:pt-6">
+              <p className="text-base sm:text-lg font-bold text-black/60 max-w-sm leading-snug">
                 Establish a direct line for operational inquiries, fleet partnerships, or specialized custom builds.
               </p>
             </div>
           </div>
 
           {/* Form */}
-          <form className="space-y-8 pt-8" onSubmit={handleSubmit(onSubmit)}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <form className="space-y-6 sm:space-y-8 pt-4 sm:pt-8" onSubmit={handleSubmit(onSubmit)}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               <div className="space-y-2 group">
                 <label className="text-[9px] font-black text-black/40 tracking-widest uppercase transition-colors group-focus-within:text-black">Operative Name</label>
                 <input
@@ -188,9 +188,9 @@ export const ContactPage = () => {
             <button
               disabled={isSubmitting}
               type="submit"
-              className="w-full py-6 bg-black text-white rounded-2xl font-black uppercase tracking-[0.3em] text-[10px] flex items-center justify-center gap-2 hover:bg-[#e2ff4a] hover:text-black transition-all group shadow-2xl">
+              className="w-full py-5 sm:py-6 bg-black text-white rounded-xl sm:rounded-2xl font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[9px] sm:text-[10px] flex items-center justify-center gap-2 hover:bg-[#e2ff4a] hover:text-black transition-all group shadow-2xl">
               {isSubmitting ? 'Transmitting...' : 'TRANSMIT INTEL'}
-              <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <Send size={12} className="sm:w-[14px] sm:h-[14px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
 
             <div className="flex items-center justify-center gap-3 opacity-20">

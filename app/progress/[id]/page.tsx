@@ -145,7 +145,7 @@ export default function SingleProgressPage() {
         </div>
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#d4d4d4] to-transparent"></div>
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-gradient-to-t from-[#d4d4d4] to-transparent"></div>
 
         {/* Back Button */}
         <Link
@@ -209,8 +209,8 @@ export default function SingleProgressPage() {
                 key={index}
                 onClick={() => setActiveSection(index)}
                 className={`px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${activeSection === index
-                    ? 'bg-black text-white'
-                    : 'bg-white/50 text-black/60 hover:bg-black/10'
+                  ? 'bg-black text-white'
+                  : 'bg-white/50 text-black/60 hover:bg-black/10'
                   }`}
               >
                 {section.name}

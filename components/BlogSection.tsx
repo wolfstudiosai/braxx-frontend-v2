@@ -137,7 +137,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
   // Blog card component to avoid duplication
   const BlogCard = ({ post }: { post: BlogPost }) => (
     <div
-      className={`group relative h-[500px] rounded-[3rem] overflow-hidden border border-black/5 bg-white transition-all duration-700 hover:shadow-2xl ${layout === 'scroll' ? 'shrink-0 w-[85vw] md:w-[45vw] lg:w-[22vw] snap-start' : ''
+      className={`group relative h-[400px] sm:h-[450px] md:h-[500px] rounded-2xl sm:rounded-4xl md:rounded-[3rem] overflow-hidden border border-black/5 bg-white transition-all duration-700 hover:shadow-2xl ${layout === 'scroll' ? 'shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[22vw] snap-start' : ''
         }`}
     >
       <div
@@ -147,34 +147,34 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
         <div className="absolute inset-0 bg-white/80 group-hover:bg-black/50 transition-colors duration-700 backdrop-blur-[1px]"></div>
       </div>
 
-      <div className="relative z-10 h-full p-10 flex flex-col justify-start space-y-6">
-        <div className="flex items-center gap-2 text-[10px] font-black tracking-widest uppercase transition-colors duration-500 text-black/40 group-hover:text-white/60">
+      <div className="relative z-10 h-full p-6 sm:p-8 md:p-10 flex flex-col justify-start space-y-4 sm:space-y-6">
+        <div className="flex items-center gap-2 text-[9px] sm:text-[10px] font-black tracking-widest uppercase transition-colors duration-500 text-black/40 group-hover:text-white/60">
           <span>{post.category}</span>
-          <span className="w-1.5 h-px bg-current opacity-50"></span>
+          <span className="w-1 sm:w-1.5 h-px bg-current opacity-50"></span>
           <span>{post.date}</span>
         </div>
 
-        <h3 className="text-xl font-black tracking-tight leading-tight transition-all duration-500 text-black group-hover:text-white group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]">
+        <h3 className="text-lg sm:text-xl font-black tracking-tight leading-tight transition-all duration-500 text-black group-hover:text-white group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]">
           {post.title}
         </h3>
 
-        <p className="text-[11px] font-bold leading-relaxed transition-all duration-500 text-black/60 group-hover:text-gray-200">
+        <p className="text-[10px] sm:text-[11px] font-bold leading-relaxed transition-all duration-500 text-black/60 group-hover:text-gray-200 line-clamp-3">
           {post.excerpt}
         </p>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-1.5 bg-black/5 group-hover:bg-[#e2ff4a] transition-all duration-700"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1 sm:h-1.5 bg-black/5 group-hover:bg-[#e2ff4a] transition-all duration-700"></div>
     </div>
   );
 
   return (
-    <section className="bg-[#d4d4d4] py-12 overflow-hidden">
-      <div className="px-8 lg:px-24 mb-12">
-        <div className="flex flex-wrap items-center justify-between pb-8 border-b border-black/10 gap-y-6">
+    <section className="bg-[#d4d4d4] py-8 sm:py-12 overflow-hidden">
+      <div className="px-4 sm:px-8 lg:px-24 mb-8 sm:mb-12">
+        <div className="flex flex-wrap items-center justify-between pb-6 sm:pb-8 border-b border-black/10 gap-y-4 sm:gap-y-6">
           {layout === 'grid' ? (
             // Grid layout header (Homepage style)
             <>
-              <h2 className="text-6xl lg:text-8xl font-black italic text-black tracking-tighter leading-none">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black italic text-black tracking-tighter leading-none">
                 LATEST <br /> <span className="text-transparent" style={{ WebkitTextStroke: '1px black' }}>NEWS</span>
               </h2>
               {showViewAll && (
@@ -236,7 +236,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
 
       {layout === 'grid' ? (
         // Grid layout (Homepage)
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-8 lg:px-24 pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-8 lg:px-24 pb-8 sm:pb-12">
           {displayPosts.map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}
@@ -245,7 +245,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
         // Scroll layout (Blog page)
         <div
           ref={scrollContainerRef}
-          className="flex overflow-x-auto snap-x snap-mandatory px-8 lg:px-24 gap-6 pb-12 scroll-smooth"
+          className="flex overflow-x-auto snap-x snap-mandatory px-4 sm:px-8 lg:px-24 gap-4 sm:gap-6 pb-8 sm:pb-12 scroll-smooth"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
