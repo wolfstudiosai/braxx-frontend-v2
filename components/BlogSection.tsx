@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useRef } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from './Link';
+import Link from 'next/link';
 
 interface BlogPost {
   id: number;

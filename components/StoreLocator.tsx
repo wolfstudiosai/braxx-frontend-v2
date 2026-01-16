@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { MapPin, Phone, ArrowUpRight } from 'lucide-react';
-import { Link } from './Link';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 interface StoreLocation {

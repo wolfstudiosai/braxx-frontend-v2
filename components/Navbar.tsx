@@ -3,18 +3,15 @@
 import React from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { useCart } from './CartContext';
-import { Link } from './Link';
-// Import ViewState for typing props
+import Link from 'next/link';
 import { ViewState } from '../types';
 
 interface NavbarProps {
-  setView?: (view: ViewState) => void;
   cartCount?: number;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ setView, cartCount: propCartCount }) => {
+export const Navbar: React.FC<NavbarProps> = ({ cartCount: propCartCount }) => {
   const { cartCount: contextCartCount } = useCart();
-  // Favor prop value if provided, otherwise use context
   const count = propCartCount !== undefined ? propCartCount : contextCartCount;
 
   return (

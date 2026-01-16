@@ -1,18 +1,12 @@
-
 "use client";
 
 import React, { useState, useTransition } from 'react';
-import Link from 'next/link';
 import { Send, Twitter, Instagram, Facebook, Linkedin, Loader2 } from 'lucide-react';
-import { ViewState } from '../types';
 import { CreateNewsLetter } from '@/lib/api';
 import { toast } from 'react-toastify';
+import Link from 'next/link';
 
-interface FooterProps {
-  setView?: (view: ViewState) => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ setView }) => {
+export const Footer = () => {
   const [email, setEmail] = useState('');
   const [isPending, startTransition] = useTransition();
 
@@ -33,12 +27,6 @@ export const Footer: React.FC<FooterProps> = ({ setView }) => {
     }
   };
 
-  const handleNav = (v: ViewState) => {
-    if (setView) {
-      setView(v);
-    }
-  };
-
   return (
     <footer className="relative h-[85vh] min-h-[700px] overflow-hidden text-white">
       <div
@@ -48,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ setView }) => {
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 h-full flex flex-col px-12 lg:px-24 py-16">
+      <div className="relative z-99 h-full flex flex-col px-12 lg:px-24 py-16">
         <div className="flex-1 flex flex-col items-center justify-center text-center space-y-12 max-w-4xl mx-auto w-full">
           <div className="space-y-4 animate-in fade-in slide-in-from-bottom-8 duration-1000">
             <h3 className="text-7xl md:text-9xl font-black italic tracking-tighter leading-none">
@@ -88,15 +76,13 @@ export const Footer: React.FC<FooterProps> = ({ setView }) => {
           <div className="flex flex-col items-end gap-8">
             <div className="flex gap-12 text-[10px] font-black tracking-[0.3em] uppercase text-white/60">
               <Link
-                href="/"
-                onClick={(e) => { if (setView) { e.preventDefault(); handleNav(ViewState.HOME); } }}
+                href="/about"
                 className="hover:text-[#e2ff4a] transition-colors"
               >
                 About
               </Link>
               <Link
                 href="/blog"
-                onClick={(e) => { if (setView) { e.preventDefault(); handleNav(ViewState.BLOG); } }}
                 className="hover:text-[#e2ff4a] transition-colors"
               >
                 Blog
